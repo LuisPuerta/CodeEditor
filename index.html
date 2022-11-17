@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@mdi/font@6.9.96/css/materialdesignicons.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Code Editor</title>
+  </head>
+  <body class="bg-gradient-to-r from-emerald-500 to-teal-500">
+    <div
+      id="container"
+      class="flex justify-center items-center p-1 m-auto mt-2"
+    >
+      <div
+        id="editor"
+        class="w-[90%] h-[90%] grid grid-cols-2 rounded bg-white"
+      >
+        <div class="code p-2 bg-zinc-800 rounded">
+          <div id="HTML-area" class="mt-2">
+            <h1 class="flex text-xl mb-1 font-semibold">
+              <img
+                src="./img/html.png"
+                alt="HTML"
+                class="align-middle self-center mr-1"
+              />HTML
+            </h1>
+            <textarea
+              spellcheck="false"
+              class="w-[98%] focus:outline-none rounded p-1 h-[150px] text-zinc-600"
+            >
+            </textarea>
+          </div>
+
+          <div id="CSS-area" class="mt-2">
+            <h1 class="flex text-xl mb-1 font-semibold">
+              <img
+                src="./img/CSS.png"
+                alt="CSS"
+                class="align-middle self-center mr-1"
+              />CSS
+            </h1>
+            <textarea
+              spellcheck="false"
+              class="w-[98%] focus:outline-none rounded p-1 h-[150px] text-zinc-600"
+            ></textarea>
+          </div>
+
+          <div id="js-area" class="mt-2">
+            <h1 class="flex text-xl mb-1 font-semibold">
+              <img
+                src="./img/js.png"
+                alt="javascript"
+                class="align-middle self-center mr-1"
+              />Javascript
+            </h1>
+            <textarea
+              spellcheck="false"
+              class="w-[98%] focus:outline-none rounded p-1 h-[150px] text-zinc-600"
+            ></textarea>
+          </div>
+          <div class="text-left">
+            <input
+              type="button"
+              value="Go"
+              id="go"
+              class="cursor-pointer bg-white w-[50px] rounded"
+            />
+          </div>
+        </div>
+        <iframe id="result" class=""></iframe>
+      </div>
+    </div>
+    <div class="w-[90%] m-auto grid-rows-2 mb-2">
+      <h1 class="text-black text-xl">
+        <i class="mdi mdi-close-circle text-red-800"></i>
+        Javascript: ErrorConsole
+      </h1>
+      <iframe
+        id="errorConsole"
+        class="bg-zinc-900 w-[100%] text-white rounded"
+      ></iframe>
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>
