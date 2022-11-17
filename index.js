@@ -8,16 +8,19 @@ const go = document.querySelector("#go");
 const result = document.querySelector("#result");
 const errorConsole = document.querySelector("#errorConsole");
 
-// EventListener
+// EventListeners
 go.addEventListener("click", runCode);
 
 window.addEventListener("DOMContentLoaded", () => {
   html.innerHTML = `<h1 id="test"> Hello world! </h1>`;
   css.innerHTML = `*{
-    font-family: sans-serif}
-    .red{color:red
-  }`;
-  js.innerHTML = `document.querySelector('#test').classList.add('red')`;
+font-family: sans-serif;
+}
+
+.red{
+color:red;
+}`;
+  js.innerHTML = `document.querySelector('#test').classList.add('red');`;
 
   runCode();
 });
@@ -31,8 +34,7 @@ function runCode() {
     localStorage.setItem("js", js.value);
 
     // Sending HTML, CSS and JS code to the iframe
-    result.contentDocument.body.innerHTML =
-      `<style>${localStorage.css}</style>` + localStorage.html;
+    result.contentDocument.body.innerHTML = `<style>${localStorage.css}</style> ${localStorage.html}`;
     result.contentWindow.eval(localStorage.js);
 
     errorConsole.contentDocument.body.innerHTML = "";
